@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByMYlbQ8WUQxgcBZW3rCR1R2Z9V85hIHg&libraries=places" async defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starry Maps</title>
+    <link rel="stylesheet" href="creategift.css">
+</head>
+<body>
+    <div class="map-display">
+        <img src="FalResim/Charcoal.png" alt="Star Map" id="map-image">
+    </div>
+    <main>
+        <div class="sidebar">
+            <div class="steps">
+                <span id="step1">1. Tasarım</span>
+                <span id="step2">2. Kişiselleştirin</span>
+                <span id="step3">3. Biçim</span>
+            </div>
+            <div class="color-picker" id="color-picker">
+                <h3>Harita renginizi seçin</h3>
+                <div class="colors">
+                    <div class="color" data-color="charcoal">Siyah</div>
+                    <div class="color" data-color="white">Beyaz</div>
+                </div>
+            </div>
+            <div class="extra-content" id="extra-content" style="display: none;">
+                <h3>Gökyüzünü nereden görmek istersin?</h3>
+                <div class="input-wrapper">
+                    <input type="text" id="locationInput" placeholder="Adres yazın...">
+                </div>
+            
+                <h3>Özel gününüz ne zamandı?</h3>
+                <div class="date-select">
+                    <select id="yearSelect">
+                        <option value="0">Seçiniz</option>
+                        <!-- Diğer yılları buraya ekleyebilirsiniz -->
+                    </select>
+                    <select id="monthSelect">
+                        <option value="0">Seçiniz</option>
+                        <option value="1">Ocak</option>
+                        <option value="2">Şubat</option>
+                        <option value="3">Mart</option>
+                        <option value="4">Nisan</option>
+                        <option value="5">Mayıs</option>
+                        <option value="6">Haziran</option>
+                        <option value="7">Temmuz</option>
+                        <option value="8">Ağustos</option>
+                        <option value="9">Eylül</option>
+                        <option value="10">Ekim</option>
+                        <option value="11">Kasım</option>
+                        <option value="12">Aralık</option>
+                    </select>
+                    <select id="daySelect">
+                    </select>
+                </div>
+            </div>
+            <div class="format-options" id="format-options" style="display: none;">
+                <h3>Bir format seçin</h3>
+                <div class="option" id="printOption">Yazdır</div>
+                <div class="option" id="frameOption">Çerçeveli</div>
+            </div>
+            <div class="frame-options" id="frame-options" style="display: none;">
+                <h3>Çerçeve Kaplaması</h3>
+                <div class="frame-option" id="woodenFrame">Ahşap</div>
+                <div class="frame-option" id="whiteFrame">Beyaz</div>
+                <div class="frame-option" id="blackFrame">Siyah</div>
+            </div>
+            <div class="button-group">
+                <button class="back-btn" id="backBtn">GERİ</button>
+                <button class="continue-btn" id="continueBtn">DEVAM ET</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        function initAutocomplete() {
+          const input = document.getElementById('locationInput');
+          const autocomplete = new google.maps.places.Autocomplete(input);
+          autocomplete.setFields(['address_components', 'geometry', 'icon', 'name']);
+          autocomplete.addListener('place_changed', function() {
+            const place = autocomplete.getPlace();
+            // Seçilen yerin detaylarını işleyin
+            console.log(place);
+          });
+        }
+        // Sayfa tamamen yüklendiğinde initAutocomplete fonksiyonunu çağırın
+        window.addEventListener('load', initAutocomplete);
+      </script>  
+    <script src="creategift.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000; /* Arka plan rengi */
+}
+
+#video-bg {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+header {
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3); /* Gölge efekti için */
+    width: 9%;
+    margin-left: 8%;
+    margin-top: 1%;
+    border-radius: 15%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-main img {
+    margin-top: -5%;
+    margin-left: -11%;
+    width: 100%; /* İstediğiniz boyuta göre ayarlayabilirsiniz */
+}
+
+.nav-main, .nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-main a, .nav-links a {
+    font-size: 100%;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px; /* Üst ve alt 10 piksel, sağ ve sol 20 piksel boşluk bırakır */
+    margin-right: 10%; 
+}
+
+.nav-main a:hover, .nav-links a:hover {
+    background: transparent; /* Arka planı transparan yap */
+    color: #ccc; /* Yazı rengini gri yap */
+
+    
+}
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #3d3c3c 0%,
+    #878586 29%,
+    #b7b5b8 67%,
+    #edecf1 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 50px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}

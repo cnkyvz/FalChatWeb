@@ -1,0 +1,97 @@
+/* Copyright 2015-16 Olaf Frohn https://github.com/ofrohn, see LICENSE */
+body{
+    background: rgb(0, 0, 0);
+}
+#bp-web-widget-container {
+  position: fixed;
+  z-index: 9999; /* Daha büyük bir z-index değeri */
+}
+
+header {
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3); /* Gölge efekti için */
+  width: 9%;
+  margin-left: 8%;
+  margin-top: 1%;
+  border-radius: 15%;
+
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav-main img {
+  margin-top: -5%;
+  margin-left: -11%;
+  width: 100%; /* İstediğiniz boyuta göre ayarlayabilirsiniz */
+}
+
+.nav-main, .nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-main a, .nav-links a {
+  font-size: 100%;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px; /* Üst ve alt 10 piksel, sağ ve sol 20 piksel boşluk bırakır */
+  margin-right: 10%; 
+}
+
+.nav-main a:hover, .nav-links a:hover {
+  background: transparent; /* Arka planı transparan yap */
+  color: #ccc; /* Yazı rengini gri yap */
+}
+#celestial-map canvas{
+  margin-top: 20%;
+  margin-left: 12%;
+}
+
+#celestial-map { width: 80%; height: auto; margin: 0; padding: 0; display: inline-block; position: relative; min-width:720px; overflow: visible; }
+#celestial-map canvas { display: inline-block; position:relative; z-index:0; cursor:hand; cursor:grab; cursor:-moz-grab; cursor:-webkit-grab; }
+#celestial-map canvas:active { cursor:move; cursor: grabbing; cursor: -moz-grabbing; cursor: -webkit-grabbing; }
+#d3-celestial-footer { text-align:center; color:#666; font:10pt/1 'Arial Unicode MS', Arial, Helvetica, sans-serif; }
+#d3-celestial-footer a { text-decoration:none; color:#99f; }
+
+/* Form */
+/* Zoom controls hidden */
+#celestial-zoomin,
+#celestial-zoomout {
+    display: none !important;
+}
+
+/* Form elements hidden */
+#celestial-form {
+    display: none !important;
+}
+
+/* Date picker hidden */
+#celestial-date {
+    display: none !important;
+}
+
+/* Hide all other select elements and inputs */
+#celestial-form select,
+#celestial-form input {
+    display: none !important;
+}
+
+/* Hide additional elements if necessary */
+#celestial-form #datepick,
+#celestial-form #download-png,
+#celestial-form #download-svg {
+    display: none !important;
+}
+
+
+/* SVG styles
+
+svg .constname {
+  fill: "#ffff99";  fill-opacity:0.7; font: bold 14px 'Lucida Sans Unicode', Trebuchet, Helvetica, Arial, sans-serif; text-anchor: middle
+}
+ */

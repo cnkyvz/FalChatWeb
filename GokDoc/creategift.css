@@ -1,0 +1,272 @@
+/* Genel stiller */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #a0afc5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar {
+    width: 90.5%;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.steps {
+    display: flex;
+    margin-top: 20%;
+    margin-left: 15%;
+    gap: 10px;
+    cursor: pointer; /* Cursor pointer olarak ayarla */
+    font-size: 18px;
+}
+
+.steps span {
+    opacity: 0.5; /* Pasif adımlar için düşük opaklık */
+    color: #666; /* Gri renk */
+    position: relative; /* Pozisyon belirleme */
+}
+
+.steps span.active {
+    color: #000; /* Aktif adım için siyah renk */
+}
+
+.steps span::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Yazı altında 2 piksel aşağıda başlat */
+    left: 0;
+    width: 100%; /* Tam genişlik */
+    height: 2px; /* Çizgi kalınlığı */
+    background-color: #000; /* Siyah renk */
+    opacity: 0; /* Başlangıçta görünmez yapalım */
+    transition: opacity 0.3s ease; /* Geçiş efekti ekleyelim */
+}
+
+.steps span.active::after {
+    opacity: 1; /* Aktif olduğunda çizgiyi görünür yap */
+}
+
+/* Renk seçici stil */
+.color-picker h3,
+.extra-content h3,
+.format-options h3,
+.frame-options h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+
+.colors {
+    margin-top: 10%;
+    margin-left: 33%;
+    display: flex;
+    gap: 10px;
+}
+
+.color {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s ease;
+}
+
+.color[data-color="charcoal"] {
+    background-color: #333;
+    color: #fff;
+}
+
+.color[data-color="white"] {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #333;
+}
+
+.color:hover, .color.selected {
+    border-color: #e91e63;
+}
+
+
+/* DEVAM ET butonu stil */
+.button-group {
+    display: flex;
+    justify-content: flex-end; /* Butonları sağa hizalama */
+    margin-top: 20px; /* Yukarıdan boşluk bırakma */
+}
+
+.continue-btn, .back-btn {
+    margin-top: 5%;
+    width: 70%;
+    height: 55px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-left: 10px; /* Aralarında boşluk bırakma */
+}
+
+.back-btn {
+    margin-left: 0; /* Geri butonunun sol boşluğunu sıfırla */
+    background-color: #cccbcb;
+    width: 25%;
+}
+
+
+
+/* Main içeriği */
+main {
+    position: absolute; /* veya position: static; */
+    left: 0;
+    top: 0;
+    align-items: flex-start;
+    width: 30%;
+    min-height: 100vh; /* Ekran yüksekliğinin tamamı */
+    background-color: #fff;
+}
+
+
+
+
+.map-display {
+    width: 60%;
+    margin-left: 63%; /* main'e göre sağa iteleme */
+    margin-top: 7%;
+}
+
+.map-display img {
+    border: 2px solid #333;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.date-select {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.date-select select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.date-select select:focus {
+    border-color: #e91e63;
+    box-shadow: 0 0 5px rgba(233, 30, 99, 0.5);
+    outline: none;
+}
+
+.date-select select option {
+    padding: 10px;
+}
+
+.date-select::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.input-wrapper {
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.input-wrapper input {
+    width: calc(100% - 20px);
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-wrapper input:focus {
+    border-color: #e91e63;
+    box-shadow: 0 0 5px rgba(233, 30, 99, 0.5);
+    outline: none;
+}
+
+.input-wrapper input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+/* Format seçici ve çerçeve seçici stilleri */
+.format-options, .frame-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.option, .frame-option {
+    margin-top: 10%;
+    padding: 6px 16px; /* Daha dar padding */
+    background-color: #f9f5f6;
+    color: #444343;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+    width: 120px; /* Sabit genişlik */
+    display: inline-block; /* Blok elemanlar gibi davranmasını sağlar */
+    line-height: 28px; /* Buton yüksekliğini ayarlar */
+}
+
+.option:hover, .frame-option:hover {
+    background-color: #ece8e9; /* Hafif gri tonu */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Gölge efekti artırıldı */
+}
+
+.option.selected, .frame-option.selected {
+    background-color: #ece8e9; /* Seçili arka plan rengi */
+    transform: scale(1.05); /* Biraz büyütme efekti */
+}
+#frame-options div {
+    display: inline-block;
+    width: 83px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#frame-options div.selected {
+    transform: scale(1.1);
+    border-color: #000;
+}

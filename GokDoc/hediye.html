@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astroloji Yorumları</title>
+    <link rel="stylesheet" href="astroloji.css">
+</head>
+<header>
+    <nav class="nav-main">
+        <a href="anasayfa.html">Anasayfa</a>
+        <a href="kahvefal.html">Fal</a>
+        <a href="hediye.html">Hediye</a>
+        <img src="FalResim/nebulasorglogo.png" alt="Logo">
+        <a href="astroloji.html">Astroloji</a>
+        <a href="../index.php">Kayıt Ol</a>
+        <a href="../login.php">Giriş Yap</a>
+    </nav>
+</header>
+<body>
+    <video autoplay muted loop id="video-ast">
+        <source src="FalResim/astrolojivideobck.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="container">
+        <h1>Burçlar</h1>
+        <div class="menu">
+            <a href="#">BURÇ YORUMLARI</a>
+            <a href="#">YÜKSELEN BURÇ</a>
+            <a href="#">BURÇ UYUMU</a>
+            <a href="#">HEDİYE ÖNERİLERİ</a>
+        </div>
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('daily')">GÜNLÜK</button>
+            <button class="tab-button" onclick="showTab('weekly')">HAFTALIK</button>
+            <button class="tab-button" onclick="showTab('monthly')">AYLIK</button>
+        </div>
+        <div id="daily" class="tab-content active">
+            <div class="zodiac-grid">
+                <div class="zodiac-item">
+                    <div class="zodiac-item-inner">
+                        <div class="zodiac-front">
+                            <a href="#">
+                                <img src="FalResim/koc.jpeg" alt="Koç Günlük Yorum">
+                                <p>Koç Günlük Yorum<br><span>21 Mart - 20 Nisan</span></p>
+                            </a>
+                        </div>
+                        <div class="zodiac-back">
+                            <p>Koç burcu için günlük yorum burada yer alacak.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="zodiac-item">
+                    <div class="zodiac-item-inner">
+                        <div class="zodiac-front">
+                            <a href="#">
+                                <img src="FalResim/boga.jpeg" alt="Boğa Günlük Yorum">
+                                <p>Boğa Günlük Yorum<br><span>21 Nisan - 21 Mayıs</span></p>
+                            </a>
+                        </div>
+                        <div class="zodiac-back">
+                            <p>Boğa burcu için günlük yorum burada yer alacak.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="zodiac-item">
+                    <div class="zodiac-item-inner">
+                        <div class="zodiac-front">
+                            <a href="#">
+                                <img src="FalResim/ikizler.jpeg" alt="İkizler Günlük Yorum">
+                                <p>İkizler Günlük Yorum<br><span>22 Mayıs - 21 Haziran</span></p>
+                            </a>
+                        </div>
+                        <div class="zodiac-back">
+                            <p>İkizler burcu için günlük yorum burada yer alacak.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="astroloji.js"></script>
+</body>
+</html>
